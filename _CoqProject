@@ -14,7 +14,7 @@ externals/SQIR/SQIR/VectorStates.v
 externals/SQIR/SQIR/UnitaryOps.v
 externals/SQIR/SQIR/AltGateSet.v
 externals/SQIR/SQIR/DiscreteProb.v
-externals/SQIR/SQIR/NDSem.v
+externals/SQIR/SQIR/DensitySem.v
 
 externals/SQIR/examples/QPE.v
 externals/SQIR/examples/Utilities.v
@@ -40,6 +40,4 @@ LocusDef.v
 LocusKind.v
 LocusType.v
 LocusSem.v
-LocusTypeProof.v
-LocusProof.v
-QafnySQIR.v
+
