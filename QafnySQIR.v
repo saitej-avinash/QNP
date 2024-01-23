@@ -186,9 +186,9 @@ Inductive trans_exp_rel {dim rmax:nat} {env:aenv} {s:var -> nat}: exp -> (base_u
           trans_exp_rel e1 p1 -> trans_exp_rel e2 p2 -> trans_exp_rel (QafnySyntax.Seq e1 e2) (SQIR.useq p1 p2).
             
 Inductive trans_pexp_rel  {dim chi rmax:nat} : aenv -> (var -> nat)
-                    -> type_map -> pexp -> (base_com dim) -> Prop :=
-  | trans_pexp_skip : forall env f T,
-      trans_pexp_rel env f T PSKIP (skip)
+                    -> type_map-> pexp -> type_map -> (base_com dim * pexp) -> Prop :=
+  | trans_pexp_skip : forall env f T T',
+      trans_pexp_rel env f T PSKIP T' (skip,PSKIP).
   | trans_pexp_let_num : forall env f T x v s e',
       trans_pexp_rel (AEnv.add x (CT) env) f T s (e') ->
       trans_pexp_rel env f T (Let x (AE (Num v)) s) (e')
